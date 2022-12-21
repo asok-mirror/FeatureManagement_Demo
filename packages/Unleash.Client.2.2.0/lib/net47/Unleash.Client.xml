@@ -1,0 +1,623 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Unleash.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Unleash.ClientFactory.UnleashClientFactory">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.ClientFactory.UnleashClientFactory.CreateClient(Unleash.UnleashSettings,System.Boolean,Unleash.Strategies.IStrategy[])">
+            <summary>
+            Initializes a new instance of Unleash client. 
+            </summary>
+            <param name="synchronousInitialization">If true, fetch and cache toggles before returning. If false, allow the unleash client schedule an initial poll of features in the background</param>
+            <param name="strategies">Custom strategies, added in addtion to builtIn strategies.</param>
+        </member>
+        <member name="M:Unleash.ClientFactory.UnleashClientFactory.CreateClientAsync(Unleash.UnleashSettings,System.Boolean,Unleash.Strategies.IStrategy[])">
+            <summary>
+            Initializes a new instance of Unleash client. 
+            </summary>
+            <param name="synchronousInitialization">If true, fetch and cache toggles before returning. If false, allow the unleash client schedule an initial poll of features in the background</param>
+            <param name="strategies">Custom strategies, added in addtion to builtIn strategies.</param>
+        </member>
+        <member name="T:Unleash.DefaultHttpClientFactory">
+            <inheritdoc />
+        </member>
+        <member name="P:Unleash.DefaultHttpClientFactory.Timeout">
+            <summary>
+            Default: 5 seconds
+            </summary>
+        </member>
+        <member name="P:Unleash.DefaultHttpClientFactory.ServicePointConnectionLeaseTimeout">
+            <summary>
+            Default: 60 seconds
+            </summary>
+        </member>
+        <member name="P:Unleash.DefaultHttpClientFactory.CustomDefaultHttpHeaders">
+            <summary>
+            Default: null
+            </summary>
+        </member>
+        <member name="F:Unleash.DefaultHttpClientFactory._httpClientCache">
+            <summary>
+            Default: empty dictionary
+            </summary>
+        </member>
+        <member name="T:Unleash.DefaultUnleash">
+            <inheritdoc />
+        </member>
+        <member name="P:Unleash.DefaultUnleash.FeatureToggles">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.DefaultUnleash.IsEnabled(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.DefaultUnleash.IsEnabled(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Unleash.IHttpClientFactory">
+            <summary>
+            Factory for creating HttpClient used to communicate with Unleash Server api.
+            </summary>
+        </member>
+        <member name="M:Unleash.IHttpClientFactory.Create(System.Uri)">
+            <summary>
+            Called a single time during application initialization.
+            </summary>
+        </member>
+        <member name="P:Unleash.Internal.IObjectLock`1.Instance">
+            <summary>
+            Gets or sets the instance of type T in a thread safe manner
+            </summary>
+        </member>
+        <member name="T:Unleash.Internal.ReaderWriterLockSlimOf`1">
+            <summary>
+            Provides synchronization control that supports multiple readers and single writer over a given object T.
+            </summary>
+        </member>
+        <member name="T:Unleash.Internal.ThreadSafeToggleCollection">
+            <inheritdoc />
+            <summary>
+            Provides synchronization control that supports multiple readers and single writer over a ToggleCollection.
+            </summary>
+        </member>
+        <member name="T:Unleash.IUnleash">
+            <inheritdoc />
+            <summary>
+            Unleash Feature Toggle Service
+            </summary>
+        </member>
+        <member name="P:Unleash.IUnleash.FeatureToggles">
+            <summary>
+            Collection of currently loaded Feature Toggles
+            </summary>
+        </member>
+        <member name="M:Unleash.IUnleash.IsEnabled(System.String)">
+            <summary>
+            Determines if the given feature toggle is enabled or not, defaulting to <c>false</c> if the toggle cannot be found.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+        </member>
+        <member name="M:Unleash.IUnleash.IsEnabled(System.String,System.Boolean)">
+            <summary>
+            Determines if the given feature toggle is enabled or not, defaulting to the value of <paramref name="defaultSetting"/> if the toggle cannot be found.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+            <param name="defaultSetting">Default value to return if toggle is not defined</param>
+        </member>
+        <member name="M:Unleash.IUnleash.IsEnabled(System.String,Unleash.UnleashContext)">
+            <summary>
+            Determines if the given feature toggle is enabled or not, defaulting to <c>false</c> if the toggle cannot be found.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+            <param name="context">The Unleash context to evaluate the toggle state against</param>
+        </member>
+        <member name="M:Unleash.IUnleash.IsEnabled(System.String,Unleash.UnleashContext,System.Boolean)">
+            <summary>
+            Determines if the given feature toggle is enabled or not, defaulting to the value of <paramref name="defaultSetting"/> if the toggle cannot be found.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+            <param name="context">The Unleash context to evaluate the toggle state against</param>
+            <param name="defaultSetting">Default value to return if toggle is not defined</param>
+        </member>
+        <member name="M:Unleash.IUnleash.GetVariant(System.String)">
+            <summary>
+            Get a weighted variant from a feature that is available.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+            <returns>A weighted variant or Variant.DISABLED_VARIANT if feature is not available</returns>
+        </member>
+        <member name="M:Unleash.IUnleash.GetVariant(System.String,Unleash.Internal.Variant)">
+            <summary>
+            Get a weighted variant from a feature that is available.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+            <param name="defaultValue">If a toggle is not found, the default value will be returned.</param>
+            <returns>A weighted variant or the supplied default value if feature is not available</returns>
+        </member>
+        <member name="M:Unleash.IUnleash.GetVariant(System.String,Unleash.UnleashContext,Unleash.Internal.Variant)">
+            <summary>
+            Get a weighted variant from a feature that is available.
+            </summary>
+            <param name="toggleName">The name of the toggle</param>
+            <param name="context">The Unleash context to evaluate the toggle state against</param>
+            <param name="defaultValue">If a toggle is not found, the default value will be returned.</param>
+            <returns>A weighted variant or the supplied default value if feature is not available</returns>
+        </member>
+        <member name="M:Unleash.IUnleash.GetVariants(System.String)">
+            <summary>
+            Get available feature variants.
+            </summary>
+            <param name="toggleName">The name of the toggle.</param>
+            <returns>A list of available variants.</returns>
+        </member>
+        <member name="M:Unleash.IUnleash.GetVariants(System.String,Unleash.UnleashContext)">
+            <summary>
+            Get available feature variants.
+            </summary>
+            <param name="toggleName">The name of the toggle.</param>
+            /// <param name="context">The Unleash context to evaluate the toggle state against.</param>
+            <returns>A list of available variants.</returns>
+        </member>
+        <member name="T:Unleash.Logging.ILog">
+            <summary>
+            Simple interface that represent a logger.
+            </summary>
+        </member>
+        <member name="M:Unleash.Logging.ILog.Log(Unleash.Logging.LogLevel,System.Func{System.String},System.Exception,System.Object[])">
+            <summary>
+            Log a message the specified log level.
+            </summary>
+            <param name="logLevel">The log level.</param>
+            <param name="messageFunc">The message function.</param>
+            <param name="exception">An optional exception.</param>
+            <param name="formatParameters">Optional format parameters for the message generated by the messagefunc. </param>
+            <returns>true if the message was logged. Otherwise false.</returns>
+            <remarks>
+            Note to implementers: the message func should not be called if the loglevel is not enabled
+            so as not to incur performance penalties.
+            
+            To check IsEnabled call Log with only LogLevel and check the return value, no event will be written.
+            </remarks>
+        </member>
+        <member name="T:Unleash.Logging.LogLevel">
+            <summary>
+            The log level.
+            </summary>
+        </member>
+        <member name="T:Unleash.Logging.ILogProvider">
+            <summary>
+            Represents a way to get a <see cref="T:Unleash.Logging.ILog"/>
+            </summary>
+        </member>
+        <member name="M:Unleash.Logging.ILogProvider.GetLogger(System.String)">
+            <summary>
+            Gets the specified named logger.
+            </summary>
+            <param name="name">Name of the logger.</param>
+            <returns>The logger reference.</returns>
+        </member>
+        <member name="M:Unleash.Logging.ILogProvider.OpenNestedContext(System.String)">
+            <summary>
+            Opens a nested diagnostics context. Not supported in EntLib logging.
+            </summary>
+            <param name="message">The message to add to the diagnostics context.</param>
+            <returns>A disposable that when disposed removes the message from the context.</returns>
+        </member>
+        <member name="M:Unleash.Logging.ILogProvider.OpenMappedContext(System.String,System.Object,System.Boolean)">
+            <summary>
+            Opens a mapped diagnostics context. Not supported in EntLib logging.
+            </summary>
+            <param name="key">A key.</param>
+            <param name="value">A value.</param>
+            <returns>A disposable that when disposed removes the map from the context.</returns>
+        </member>
+        <member name="T:Unleash.Logging.LogProvider">
+            <summary>
+            Provides a mechanism to create instances of <see cref="T:Unleash.Logging.ILog" /> objects.
+            </summary>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.SetCurrentLogProvider(Unleash.Logging.ILogProvider)">
+            <summary>
+            Sets the current log provider.
+            </summary>
+            <param name="logProvider">The log provider.</param>
+        </member>
+        <member name="P:Unleash.Logging.LogProvider.IsDisabled">
+            <summary>
+            Gets or sets a value indicating whether this is logging is disabled.
+            </summary>
+            <value>
+            <c>true</c> if logging is disabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Unleash.Logging.LogProvider.OnCurrentLogProviderSet">
+            <summary>
+            Sets an action that is invoked when a consumer of your library has called SetCurrentLogProvider. It is 
+            important that hook into this if you are using child libraries (especially ilmerged ones) that are using
+            LibLog (or other logging abstraction) so you adapt and delegate to them.
+            <see cref="M:Unleash.Logging.LogProvider.SetCurrentLogProvider(Unleash.Logging.ILogProvider)"/> 
+            </summary>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.For``1">
+            <summary>
+            Gets a logger for the specified type.
+            </summary>
+            <typeparam name="T">The type whose name will be used for the logger.</typeparam>
+            <returns>An instance of <see cref="T:Unleash.Logging.ILog"/></returns>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.GetCurrentClassLogger">
+            <summary>
+            Gets a logger for the current class.
+            </summary>
+            <returns>An instance of <see cref="T:Unleash.Logging.ILog"/></returns>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.GetLogger(System.Type,System.String)">
+            <summary>
+            Gets a logger for the specified type.
+            </summary>
+            <param name="type">The type whose name will be used for the logger.</param>
+            <param name="fallbackTypeName">If the type is null then this name will be used as the log name instead</param>
+            <returns>An instance of <see cref="T:Unleash.Logging.ILog"/></returns>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.GetLogger(System.String)">
+            <summary>
+            Gets a logger with the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>An instance of <see cref="T:Unleash.Logging.ILog"/></returns>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.OpenNestedContext(System.String)">
+            <summary>
+            Opens a nested diagnostics context.
+            </summary>
+            <param name="message">A message.</param>
+            <returns>An <see cref="T:System.IDisposable"/> that closes context when disposed.</returns>
+        </member>
+        <member name="M:Unleash.Logging.LogProvider.OpenMappedContext(System.String,System.Object,System.Boolean)">
+            <summary>
+            Opens a mapped diagnostics context.
+            </summary>
+            <param name="key">A key.</param>
+            <param name="value">A value.</param>
+            <returns>An <see cref="T:System.IDisposable"/> that closes context when disposed.</returns>
+        </member>
+        <member name="T:Unleash.Logging.LogProviders.LoupeLogProvider.WriteDelegate">
+            <summary>
+            The form of the Loupe Log.Write method we're using
+            </summary>
+        </member>
+        <member name="P:Unleash.Logging.LogProviders.LoupeLogProvider.ProviderIsAvailableOverride">
+            <summary>
+            Gets or sets a value indicating whether [provider is available override]. Used in tests.
+            </summary>
+            <value>
+            <c>true</c> if [provider is available override]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Unleash.Logging.LogProviders.LogMessageFormatter.SimulateStructuredLogging(System.Func{System.String},System.Object[])">
+            <summary>
+            Some logging frameworks support structured logging, such as serilog. This will allow you to add names to structured data in a format string:
+            For example: Log("Log message to {user}", user). This only works with serilog, but as the user of LibLog, you don't know if serilog is actually 
+            used. So, this class simulates that. it will replace any text in {curly braces} with an index number. 
+            
+            "Log {message} to {user}" would turn into => "Log {0} to {1}". Then the format parameters are handled using regular .net string.Format.
+            </summary>
+            <param name="messageBuilder">The message builder.</param>
+            <param name="formatParameters">The format parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Unleash.Metrics.ThreadSafeMetricsBucket">
+            <inheritdoc />
+            <summary>
+            Provides synchronization that supports multiple registration counters and single 'writer' (transfer to server)
+            
+            While in write mode, no registrations will occur. i.e: no lock for rest of system.
+            </summary>
+        </member>
+        <member name="M:Unleash.Metrics.ThreadSafeMetricsBucket.RegisterCount(System.String,System.Boolean)">
+            <summary>
+            Registers a new toggle count given a read-lock can be aquired.
+            </summary>
+            <param name="toggleName">The name of the toggle.</param>
+            <param name="active">True or False</param>
+        </member>
+        <member name="M:Unleash.Metrics.ThreadSafeMetricsBucket.StopCollectingMetrics(Unleash.Metrics.MetricsBucket@)">
+            <summary>
+            Use withing using-statement. New registrations will not be added.
+            </summary>
+        </member>
+        <member name="M:Unleash.Metrics.ThreadSafeMetricsBucket.System#IDisposable#Dispose">
+            <inheritdoc />
+            <summary>
+            Resets the counters to 0.
+            </summary>
+        </member>
+        <member name="M:Unleash.Metrics.ToggleCount.Reset">
+            <summary>
+            Resets the counters to 0
+            </summary>
+        </member>
+        <member name="T:Unleash.Scheduling.IUnleashScheduledTask">
+            <summary>
+            A scheduled task that executes in the background at given intervals.
+            </summary>
+        </member>
+        <member name="M:Unleash.Scheduling.IUnleashScheduledTask.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            Executes the task
+            </summary>
+            <param name="cancellationToken">Cancellation token passed into the task.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Unleash.Scheduling.IUnleashScheduledTask.Name">
+            <summary>
+            Gets the name of the task
+            </summary>
+        </member>
+        <member name="P:Unleash.Scheduling.IUnleashScheduledTask.Interval">
+            <summary>
+            Gets the interval of which the task should be executed.
+            </summary>
+        </member>
+        <member name="P:Unleash.Scheduling.IUnleashScheduledTask.ExecuteDuringStartup">
+            <summary>
+            Gets a flag indicating that the task should run during startup.
+            </summary>
+        </member>
+        <member name="T:Unleash.Scheduling.IUnleashScheduledTaskManager">
+            <inheritdoc />
+            <summary>
+            Task manager for scheduling tasks on a background thread. 
+            </summary>
+        </member>
+        <member name="M:Unleash.Scheduling.IUnleashScheduledTaskManager.Configure(System.Collections.Generic.IEnumerable{Unleash.Scheduling.IUnleashScheduledTask},System.Threading.CancellationToken)">
+            <summary>
+            Configures a set of tasks to execute in the background.
+            </summary>
+            <param name="tasks">Tasks to be executed</param>
+            <param name="cancellationToken">Cancellation token which will be passed during shutdown (Dispose).</param>
+        </member>
+        <member name="T:Unleash.Scheduling.SystemTimerScheduledTaskManager">
+            <inheritdoc />
+            <summary>
+            Default task manager based on System.Threading.Timers.
+            </summary>
+        </member>
+        <member name="T:Unleash.Serialization.JsonSerializerTester">
+            <summary>
+            Helper class for verifying that custom implemented json serializers work as expected.
+            </summary>
+        </member>
+        <member name="T:Unleash.Strategies.ApplicationHostnameStrategy">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.Strategies.ApplicationHostnameStrategy.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:Unleash.Strategies.ApplicationHostnameStrategy.Name">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.Strategies.ApplicationHostnameStrategy.IsEnabled(System.Collections.Generic.Dictionary{System.String,System.String},Unleash.UnleashContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Unleash.Strategies.GradualRolloutSessionIdStrategy">
+             : a gradual roll-out strategy based on session id.
+            
+             Using this strategy you can target only users bound to a session and gradually expose your
+             feature to higher percentage of the logged in user.
+            
+             This strategy takes two parameters:
+              - percentage :  a number between 0 and 100. The percentage you want to enable the feature for.
+              - groupId :     a groupId used for rolling out the feature. By using the same groupId for different
+                              toggles you can correlate the user experience across toggles.
+            
+        </member>
+        <member name="T:Unleash.Strategies.GradualRolloutUserIdStrategy">
+             : a gradual roll-out strategy based on userId.
+            
+             Using this strategy you can target only logged in users and gradually expose your
+             feature to higher percentage of the logged in user.
+            
+             This strategy takes two parameters:
+              - percentage :  a number between 0 and 100. The percentage you want to enable the feature for.
+              - groupId :     a groupId used for rolling out the feature. By using the same groupId for different
+                              toggles you can correlate the user experience across toggles.
+            
+        </member>
+        <member name="T:Unleash.Strategies.IStrategy">
+            <summary>
+            Defines a strategy for enabling a feature.
+            </summary>
+        </member>
+        <member name="P:Unleash.Strategies.IStrategy.Name">
+            <summary>
+            Gets the stragegy name 
+            </summary>
+        </member>
+        <member name="M:Unleash.Strategies.IStrategy.IsEnabled(System.Collections.Generic.Dictionary{System.String,System.String},Unleash.UnleashContext)">
+            <summary>
+            Calculates if the strategy is enabled for a given context
+            </summary>
+        </member>
+        <member name="M:Unleash.Strategies.IStrategy.IsEnabled(System.Collections.Generic.Dictionary{System.String,System.String},Unleash.UnleashContext,System.Collections.Generic.List{Unleash.Internal.Constraint})">
+            <summary>
+            Calculates if the strategy is enabled for a given context and constraints
+            </summary>
+            <param name="parameters"></param>
+            <param name="context"></param>
+            <param name="constraints"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unleash.Strategies.StrategyUtils.GetNormalizedNumber(System.String,System.String,System.Int32)">
+            <summary>
+            Takes to string inputs concat them, produce a hashCode and return a normalized value between 0 and 100;
+            </summary>
+        </member>
+        <member name="M:Unleash.Strategies.StrategyUtils.GetPercentage(System.String)">
+            <summary>
+            Takes a numeric string value and converts it to a int between 0 and 100.
+            
+            returns 0 if the string is not numeric
+            </summary>
+            <returns>Return an int between 0 and 100</returns>
+            <param name="percentage">A numeric string value</param>
+        </member>
+        <member name="T:Unleash.Strategies.UserWithIdStrategy">
+            <inheritdoc />
+        </member>
+        <member name="P:Unleash.Strategies.UserWithIdStrategy.Name">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.Strategies.UserWithIdStrategy.IsEnabled(System.Collections.Generic.Dictionary{System.String,System.String},Unleash.UnleashContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Unleash.UnleashContext">
+            <summary>
+            A context which the feature request should be validated againt. Usually scoped to a web request through an implementation of IUnleashContextProvider.
+            </summary>
+        </member>
+        <member name="T:Unleash.UnleashException">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.UnleashException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.UnleashException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.UnleashException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:Unleash.UnleashException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Unleash.UnleashSettings">
+            <summary>
+            Unleash settings
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.SdkVersion">
+            <summary>
+            Gets the version of unleash client running.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.UnleashApi">
+            <summary>
+            Gets or set the uri for the backend unleash server.
+            
+            Default: http://unleash.herokuapp.com/api/
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.AppName">
+            <summary>
+            Gets or sets an application name. Used for communication with backend api.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.Environment">
+            <summary>
+            Gets or sets an environment. Used for communication with backend api.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.InstanceTag">
+            <summary>
+            Gets or sets an instance tag. Used for communication with backend api.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.ProjectId">
+            <summary>
+            Sets the project to fetch feature toggles for.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.FetchTogglesInterval">
+            <summary>
+            Gets or sets the interval in which feature toggle changes are re-fetched.
+            
+            Default: 30 seconds
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.SendMetricsInterval">
+            <summary>
+            Gets or sets the interval in which metriccs are sent to the server. When null, no metrics is sent.
+            
+            Default: null
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.LocalStorageFolder">
+            <summary>
+            Gets or set a directory for storing temporary files (toggles and current etag values). 
+            
+            Default: Path.GetTempPath()
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.CustomHttpHeaders">
+            <summary>
+            Gets or sets a collection of custom http headers which will be included when communicating with the backend server.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.UnleashCustomHttpHeaderProvider">
+            <summary>
+            Gets or sets a provider that returns a dictionary of custom http headers
+            which will be included when communicating with the backend server.
+            This provider will be called before each outgoing request to the unleash server.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.UnleashContextProvider">
+            <summary>
+            Gets or sets the unleash context provider. This is needed when using any of the activation strategies 
+            that needs application specific context like userid etc.
+            
+            Default: A provider with no context.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.JsonSerializer">
+            <summary>
+            Gets or sets a json serializer. 
+            
+            Default: A serializer based on Newtonsoft will be used, given that these assemblies are loaded into the appdomain already.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.HttpClientFactory">
+            <summary>
+            Get or sets a factory class for creating the HttpClient instance used for communicating with the backend.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.ScheduledTaskManager">
+            <summary>
+            Gets or sets the scheduled task manager used for syncing feature toggles and metrics with the backend in the background.
+            Default: An implementation based on System.Threading.Timers
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.UnleashApiClient">
+            <summary>
+            INTERNAL: Gets or sets an api client instance. Can be used for testing/mocking etc.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.FileSystem">
+            <summary>
+            INTERNAL: Gets or sets the file system abstraction. Can be used for testing/mocking etc.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.ToggleBootstrapProvider">
+            <summary>
+            Gets or sets the toggle bootstrap provider (file, url, etc). Can be used for testing/mocking etc.
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.BootstrapOverride">
+            <summary>
+            Gets or sets the override behaviour of the Bootstrap Toggles feature
+            </summary>
+        </member>
+        <member name="P:Unleash.UnleashSettings.ScheduleFeatureToggleFetchImmediatly">
+            <summary>
+            INTERNAL: Gets or sets if the feature toggle fetch should be immeditely scheduled. Used by the client factory to prevent redundant initial fetches.
+            </summary>
+        </member>
+        <member name="M:Unleash.UnleashSettings.ToString">
+            <summary>
+            Returns info about the unleash setup.
+            </summary>
+        </member>
+    </members>
+</doc>

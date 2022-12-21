@@ -1,0 +1,59 @@
+﻿<div class="jumbotron">
+    <h1>Feature Rollout Demo(Dotnet)</h1>
+    <p class="lead">Active?</p>
+    <p>@ViewBag.Feature: <strong>@ViewBag.FeatureEnabled</strong></p>
+    <br />
+    <p><a href="https://github.com/Unleash/unleash" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <br />
+    <p>Asynchronous way</p>
+    <input type="submit" id="getCurrentFeaturevalue" value="Get Current Feature Value" class="btn btn-primary btn-lg" style="margin-bottom: 15px" />
+    <br />
+    <p>@ViewBag.Feature: <label id="currentFeatureValue" /> </p>
+    <p>Appsetting Demo  - Varient</p>
+    <input type="submit" id="getCurrentPhonevalue" value="Get appSetting  value from varient" class="btn btn-primary btn-lg" style="margin-bottom: 15px" />
+    <br />
+    <p>Phone Numbers (Varient): <label id="currentPhoneValue" /> </p>
+    <p>Appsetting Demo  - Strategy</p>
+    <input type="submit" id="getStrategyPhonevalue" value="Get appSetting  value from strategy" class="btn btn-primary btn-lg" style="margin-bottom: 15px" />
+    <br />
+    <p>Phone Numbers (Strategy): <label id="strategyPhoneValue" /> </p>
+</div>
+<script>
+
+    $(document).ready(function () {
+
+        $("#getCurrentFeaturevalue").click(function () {
+            $('#currentFeatureValue').html("")
+            getFeatureValue("/home/getValue", "#currentFeatureValue");            
+        });
+
+        $("#getCurrentPhonevalue").click(function () {
+            $('#currentPhoneValue').html("")
+            getFeatureValue("/home/getPhoneNumber", "#currentPhoneValue");
+        });
+
+        $("#getStrategyPhonevalue").click(function () {
+            $('#strategyPhoneValue').html("")
+            getFeatureValue("/home/getPhoneNumberFromStrategy", "#strategyPhoneValue");
+        });
+    })
+
+    function getFeatureValue(url, id) {
+        $.ajax({
+            method: "GET",
+            url: url,
+            success: function (data) {
+                $(id).html(capitalizeFirstLetter(data.message.toString()))
+                //return data.message;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $(id).html("failed to getch data")
+                console.log(textStatus);
+            }
+        })
+    }
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+</script>
