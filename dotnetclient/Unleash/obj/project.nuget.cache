@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "3x/JuRjLHJxSwdBBjVOK6UOLEQoBj2rBi6jiuuFn0L3H2dZNb/0aJglJN4zNeJmmocWfNZuLtU3d0FUlJk3qag==",
+  "success": true,
+  "projectFilePath": "C:\\toolbox\\un-leash\\unleash-client-dotnet\\src\\Unleash\\Unleash.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asokk\\.nuget\\packages\\liblog\\4.2.6\\liblog.4.2.6.nupkg.sha512",
+    "C:\\Users\\asokk\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\asokk\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\asokk\\.nuget\\packages\\murmurhash\\1.0.3\\murmurhash.1.0.3.nupkg.sha512",
+    "C:\\Users\\asokk\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\asokk\\.nuget\\packages\\nuget.versioning\\6.1.0\\nuget.versioning.6.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

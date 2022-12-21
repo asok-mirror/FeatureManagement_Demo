@@ -1,0 +1,13 @@
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\net47\Unleash.Client.dll
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\net47\Unleash.Client.pdb
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\net47\MurmurHash.dll
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\net47\NuGet.Versioning.dll
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.csproj.AssemblyReference.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.csproj.SuggestedBindingRedirects.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.GeneratedMSBuildEditorConfig.editorconfig
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.AssemblyInfoInputs.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.AssemblyInfo.cs
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.csproj.CoreCompileInputs.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.csproj.CopyComplete
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.Client.dll
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net47\Unleash.Client.pdb

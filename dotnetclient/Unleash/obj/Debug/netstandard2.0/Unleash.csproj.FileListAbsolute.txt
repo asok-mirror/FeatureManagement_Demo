@@ -1,0 +1,11 @@
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\netstandard2.0\Unleash.Client.deps.json
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\netstandard2.0\Unleash.Client.dll
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\netstandard2.0\Unleash.Client.pdb
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.csproj.AssemblyReference.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.csproj.SuggestedBindingRedirects.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.GeneratedMSBuildEditorConfig.editorconfig
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.AssemblyInfoInputs.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.AssemblyInfo.cs
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.csproj.CoreCompileInputs.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.Client.dll
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\netstandard2.0\Unleash.Client.pdb

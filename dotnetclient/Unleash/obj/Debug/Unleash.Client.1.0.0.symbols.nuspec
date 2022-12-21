@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Unleash.Client</id>
+    <version>1.0.0</version>
+    <authors>Unleash</authors>
+    <licenseUrl>https://raw.githubusercontent.com/Unleash/unleash-client-dotnet/main/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Unleash/unleash-client-dotnet</projectUrl>
+    <iconUrl>https://github.com/Unleash/unleash-client-dotnet/raw/main/resources/logo.png</iconUrl>
+    <description>Flexible feature toggle client. It supports enabling features runtime, through multiple activation strategies, and allows you to decouple deployment of code from release of new features. Unleash is a feature toggle system that gives you a great overview over all feature toggles across all your applications and services. Read more at: https://github.com/unleash/unleash/</description>
+    <copyright>Copyright 2020</copyright>
+    <tags>feature-toggle runtime-toggling feature-flags continous delivery unleash</tags>
+    <repository type="git" url="https://github.com/Unleash/unleash-client-dotnet" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7">
+        <dependency id="NuGet.Versioning" version="6.1.0" exclude="Build,Analyzers" />
+        <dependency id="murmurhash" version="1.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.5.0" exclude="Build,Analyzers" />
+        <dependency id="NuGet.Versioning" version="6.1.0" exclude="Build,Analyzers" />
+        <dependency id="murmurhash" version="1.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.7" />
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.7" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\net47\Unleash.Client.pdb" target="lib\net47\Unleash.Client.pdb" />
+    <file src="C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\bin\Debug\netstandard2.0\Unleash.Client.pdb" target="lib\netstandard2.0\Unleash.Client.pdb" />
+  </files>
+</package>

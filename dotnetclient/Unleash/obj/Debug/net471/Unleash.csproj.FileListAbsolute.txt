@@ -1,0 +1,6 @@
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net471\Unleash.csproj.AssemblyReference.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net471\Unleash.csproj.SuggestedBindingRedirects.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net471\Unleash.GeneratedMSBuildEditorConfig.editorconfig
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net471\Unleash.AssemblyInfoInputs.cache
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net471\Unleash.AssemblyInfo.cs
+C:\toolbox\un-leash\unleash-client-dotnet\src\Unleash\obj\Debug\net471\Unleash.csproj.CoreCompileInputs.cache
